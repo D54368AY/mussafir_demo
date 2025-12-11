@@ -1,0 +1,49 @@
+.faq-section{width:100%;}
+.faq-title{font-size:1.25rem;font-weight:700;color:#0f172a;margin-bottom:1rem;}
+.faq-list{display:flex;flex-direction:column;gap:0.5rem;}
+.faq-item{background:transparent;border-top:1px solid #e6eef6;padding:0.75rem 0;display:flex;flex-direction:column;}
+.faq-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+.faq-question{font-size:0.95rem;color:#0b3a57;margin:0;font-weight:600;}
+.faq-toggle{background:none;border:0;cursor:pointer;padding:6px;border-radius:6px;display:flex;align-items:center;justify-content:center}
+.chev{width:18px;height:18px;transition:transform 180ms ease;}
+.chev.open{transform:rotate(180deg);}
+.answer{margin-top:0.75rem;color:#475569;font-size:0.95rem;line-height:1.6;max-height:0;overflow:hidden;transition:max-height 240ms ease, opacity 200ms ease;opacity:0;}
+.answer.open{max-height:800px;opacity:1;}
+
+/* Mobile: hide inline answers and show drawer instead */
+@media (max-width: 640px) {
+  .answer { display: none !important; }
+}
+
+/* Backdrop for mobile drawer */
+.faq-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(2,6,23,0.45);
+  z-index: 40;
+  opacity: 1;
+  transition: opacity 200ms ease;
+}
+
+/* Drawer panel (mobile) */
+.faq-drawer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  background: #fff;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  max-height: 85vh;
+  overflow: auto;
+  transform: translateY(100%);
+  transition: transform 260ms cubic-bezier(.2,.9,.2,1);
+  box-shadow: 0 -10px 30px rgba(2,6,23,0.12);
+  padding: 1rem;
+}
+.faq-drawer.open { transform: translateY(0); }
+.faq-drawer-header { display:flex;align-items:center;justify-content:space-between;gap:1rem;border-bottom:1px solid #eef2f7;padding-bottom:0.5rem;margin-bottom:0.5rem; }
+.faq-drawer-close { background:none;border:0;font-size:1.1rem;cursor:pointer;padding:6px;border-radius:6px; }
+.faq-drawer-body { padding-bottom:1.5rem; }
+.faq-answer-body{ color:#475569;font-size:0.95rem;line-height:1.6; margin:0; white-space:pre-wrap; }
