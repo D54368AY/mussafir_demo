@@ -23,7 +23,7 @@ export default function OffersSection() {
 
             <NationalitySelect />
 
-            <div className="offers-category">
+            {/* <div className="offers-category">
 
                 <button className="arrow-btn left-arrow">
                     <img src="/Polygon 3.svg" alt="left arrow" />
@@ -35,7 +35,7 @@ export default function OffersSection() {
                     <img src="/Polygon 1.svg" alt="right arrow" />
                 </button>
 
-            </div>
+            </div> */}
 
             {/* ⭐ ARC BACKGROUND WRAPPER ADDED HERE ⭐ */}
             <div className="visa-section-bg">
