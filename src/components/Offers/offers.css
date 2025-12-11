@@ -1,0 +1,128 @@
+.offers-wrapper {
+  padding: 20px 20px;
+  width: 100%;
+}
+
+.offers-heading {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.offers-category {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.category-btn {
+  background: #3b82f6;
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 20px;
+}
+
+.view-all {
+  text-align: center;
+  color: #1e90ff;
+  margin-top: 12px;
+  cursor: pointer;
+}
+
+/* -------------------------- */
+/* ARC BACKGROUND */
+/* -------------------------- */
+
+.visa-section-bg {
+  width: 100%;
+  margin-top: 40px;
+  padding-top: 140px;
+  padding-bottom: 80px;
+  position: relative;
+
+  /* The curved blue faded arc */
+  background: radial-gradient(
+      circle at top center,
+      rgba(173, 216, 255, 0.55) 0%,
+      rgba(216, 232, 255, 0.45) 45%,
+      rgba(255, 255, 255, 1) 80%
+    );
+
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  overflow: hidden;
+}
+
+/* Glow highlight on arc edge */
+.visa-section-bg::before {
+  content: "";
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 85%;
+  height: 60px;
+
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 140, 255, 0.35),
+    rgba(0, 140, 255, 0) 70%
+  );
+
+  filter: blur(20px);
+}
+
+/* Center items inside arc */
+.visa-carousel-container {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Asia + Arrows container */
+.offers-category {
+  position: absolute;
+  top: 65%;                  /* moves the category onto the arc */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  z-index: 10;
+}
+
+/* Asia button styling */
+.category-btn {
+  background: #3b82f6;
+  color: #fff;
+  padding: 8px 32px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+}
+
+/* Blue arrow buttons */
+.arrow-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #3b82f6;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Proper arrow spacing */
+.left-arrow {
+  margin-right: -6px;
+}
+
+.right-arrow {
+  margin-left: -6px;
+}
