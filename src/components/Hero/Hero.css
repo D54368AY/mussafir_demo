@@ -3,7 +3,6 @@
     width: 100%;
     height: 100%;
     position: relative;
-
 }
 
 
@@ -15,8 +14,6 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    z-index: 123;
-    
 }
 
 .container {
@@ -271,9 +268,11 @@
 }
 
 .footer {
-    position: relative;
-    z-index: 124;
-    width: 50%;
+    margin-top: -30px;
+    z-index: 999;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .aiPrompt {
@@ -286,11 +285,7 @@
     box-shadow: 0 12px 48px rgba(0, 0, 0, 0.12), 0 0 1px rgba(0, 0, 0, 0.05);
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.aiPrompt:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 64px rgba(0, 0, 0, 0.18);
+    z-index: 999;
 }
 
 .aiIcon {
