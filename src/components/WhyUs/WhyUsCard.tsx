@@ -3,7 +3,7 @@ import { WhyUsProps } from "./WhyUs.types";
 
 const WhyUsCard = ({ item }: WhyUsProps) => {
   return (
-    <div className="bg-white border rounded-2xl p-8 flex gap-6 items-start shadow-sm hover:shadow-md transition-all duration-200">
+    <div className="bg-white border border-[#F2F2F8] rounded-2xl lg:p-8 p-4 flex lg:flex-row flex-col gap-6 items-start shadow-sm hover:shadow-md transition-all duration-200">
       {/* Icon Circle */}
       <div className="w-16 h-16 flex items-center justify-center rounded-full bg-blue-50 border border-[#F2F2F8]">
         <Image
