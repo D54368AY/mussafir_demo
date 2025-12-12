@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import "./bannerCarousel.css";
 
 export default function BannerCarousel({ images }: { images: string[] }) {
     const [index, setIndex] = useState(0);
@@ -10,37 +9,53 @@ export default function BannerCarousel({ images }: { images: string[] }) {
     const prev = () => setIndex((i) => (i - 1 + images.length) % images.length);
 
     return (
-        <div className="banner-wrapper">
-            <div className="banner-carousel">
+        <div className="w-full">
+            {/* Carousel box */}
+            <div className="relative w-full overflow-hidden">
                 <div
-                    className="banner-track"
+                    className="flex transition-transform duration-500"
                     style={{ transform: `translateX(-${index * 100}%)` }}
                 >
                     {images.map((img, i) => (
-                        <img key={i} src={img} className="banner-slide" />
+                        <img
+                            key={i}
+                            src={img}
+                            className="w-full shrink-0 rounded-[18px]"
+                        />
                     ))}
                 </div>
             </div>
 
-            <div className="banner-controls">
-                <div className="banner-dots">
+            {/* Bottom Controls */}
+            <div className="mt-4 px-4 flex justify-between items-center">
+
+                {/* Dots */}
+                <div className="flex gap-2">
                     {images.map((_, i) => (
                         <span
                             key={i}
-                            className={`dot ${i === index ? "active" : ""}`}
                             onClick={() => setIndex(i)}
-                        />
+                            className={`w-3 h-3 rounded-full cursor-pointer transition 
+                                ${i === index ? "bg-blue-500 scale-110" : "bg-gray-300"}
+                            `}
+                        ></span>
                     ))}
                 </div>
 
-               
-                <div className="banner-bottom-arrows">
-                    <button className="bottom-arrow" onClick={prev}>
-                        <img src="/chevron-up (1).svg" alt="prev" />
-                    </button>                    
-                    
-                    <button className="bottom-arrow" onClick={next}>
-                        <img src="/chevron-up.svg" alt="next" />
+                {/* Arrows */}
+                <div className="flex gap-3">
+                    <button
+                        onClick={prev}
+                        className="w-8 h-8 rounded-full bg-white border border-gray-300 shadow flex items-center justify-center"
+                    >
+                        <img src="/chevron-up (1).svg" alt="prev" className="w-4" />
+                    </button>
+
+                    <button
+                        onClick={next}
+                        className="w-8 h-8 rounded-full bg-white border border-gray-300 shadow flex items-center justify-center"
+                    >
+                        <img src="/chevron-up.svg" alt="next" className="w-4" />
                     </button>
                 </div>
             </div>

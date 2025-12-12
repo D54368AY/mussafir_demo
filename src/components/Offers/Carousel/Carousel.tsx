@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { CarouselProps } from "./Carousel.types";
-import "./carousel.css";
 
 export default function Carousel({ items, visibleCount = 3 }: CarouselProps) {
     const [index, setIndex] = useState(0);
@@ -10,7 +9,6 @@ export default function Carousel({ items, visibleCount = 3 }: CarouselProps) {
     const prev = () => setIndex((i) => (i - 1 + items.length) % items.length);
     const next = () => setIndex((i) => (i + 1) % items.length);
 
-    // visible slices
     const getVisibleItems = () => {
         const arr = [];
         for (let i = -1; i <= 1; i++) {
@@ -22,45 +20,48 @@ export default function Carousel({ items, visibleCount = 3 }: CarouselProps) {
     const visibleItems = getVisibleItems();
 
     const handleItemClick = (i: number) => {
-        if (i === 0) {
-            
-            prev();
-        } else if (i === 2) {
-           
-            next();
-        }
-       
+        if (i === 0) prev();
+        else if (i === 2) next();
     };
 
-
     return (
-        
-        <div className="carousel">
+        <div className="flex items-center justify-center w-full mt-6">
 
-            <div className="carousel">
-                <button className="carousel-arrow left" onClick={prev}>
-                    <img src="/chevron-up (1).svg" alt="prev" />
-                </button>
+            {/* Left Arrow */}
+            <button
+                className="w-10 h-10 flex items-center justify-center"
+                onClick={prev}
+            >
+                <img src="/chevron-up (1).svg" className="w-10" alt="prev" />
+            </button>
 
-                <div className="carousel-track">
-                    {visibleItems.map((item, i) => (
-                        <div
-                            key={i}
-                            className={`carousel-item ${i === 1 ? "active" : "inactive"}`}
-                            onClick={() => handleItemClick(i)}
-                        >
-                            {item}
-                        </div>
-                    ))}
-                </div>
-
-                <button className="carousel-arrow right" onClick={next}>
-                    <img src="/chevron-up.svg" alt="next" />
-                </button>
+            {/* Track */}
+            <div className="flex items-center justify-center gap-5">
+                {visibleItems.map((item, i) => (
+                    <div
+                        key={i}
+                        onClick={() => handleItemClick(i)}
+                        className={`
+                            transition-all duration-300 cursor-pointer
+                            ${i === 1
+                                ? "scale-115 opacity-100 z-10 blur-0"
+                                : "scale-95 opacity-70 blur-[1px]"
+                            }
+                        `}
+                    >
+                        {item}
+                    </div>
+                ))}
             </div>
 
+            {/* Right Arrow */}
+            <button
+                className="w-10 h-10 flex items-center justify-center"
+                onClick={next}
+            >
+                <img src="/chevron-up.svg" className="w-10" alt="next" />
+            </button>
 
-          
         </div>
     );
 }
