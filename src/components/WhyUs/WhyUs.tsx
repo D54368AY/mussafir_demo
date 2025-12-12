@@ -32,7 +32,7 @@ const WhyUs = () => {
           Why choose musafir?
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-2 gap-6">
           {whyUsData.map((item: WhyUsItem, idx: number) => (
             <WhyUsCard key={idx} item={item} />
           ))}
