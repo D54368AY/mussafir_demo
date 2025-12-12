@@ -6,9 +6,8 @@ import { FaqProps } from "./Faq.types";
 
 export const Faq: React.FC<FaqProps> = ({ items, allowMultiple = false }) => {
   const [openIds, setOpenIds] = useState<Array<string | number>>([]);
-  const [isMobile, setIsMobile] = useState<boolean>(
-    typeof window !== "undefined" ? window.innerWidth <= 640 : false
-  );
+  // initialize to false so server and initial client render match (avoids hydration mismatch)
+  const [isMobile, setIsMobile] = useState<boolean>(false);
 
   React.useEffect(() => {
     const onResize = () => setIsMobile(window.innerWidth <= 640);

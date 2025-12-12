@@ -73,6 +73,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({
               <p className="testimonial-quote">{t.quote}</p>
 
               <div className="testimonial-footer">
+                <p className="testimonial-author">{t.author}</p>
                 <div className="testimonial-stars" aria-hidden>
                   {Array.from({ length: 5 }).map((_, i) => (
                     <svg
@@ -87,7 +88,6 @@ export const Testimonials: React.FC<TestimonialsProps> = ({
                     </svg>
                   ))}
                 </div>
-                <p className="testimonial-author">{t.author}</p>
               </div>
             </article>
           ))}

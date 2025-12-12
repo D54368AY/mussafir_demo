@@ -1,0 +1,14 @@
+.section-wrapper {
+  text-align: center;
+  margin: 32px 0 10px;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.section-subtitle {
+  color: #6f6f6f;
+  font-size: 14px;
+}

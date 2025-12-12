@@ -1,0 +1,31 @@
+.banner-carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.banner-slide {
+  width: 100%;
+  border-radius: 18px;
+}
+
+.banner-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.banner-arrow img {
+  width: 30px;
+}
+
+.banner-arrow.left {
+  left: 10px;
+}
+
+.banner-arrow.right {
+  right: 10px;
+}

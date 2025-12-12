@@ -86,15 +86,24 @@
 /* Footer */
 .testimonial-footer {
   @apply flex items-center justify-between mt-auto pt-4 border-t border-gray-100;
+  gap: 0.5rem;
+  align-items: center;
 }
 
 .testimonial-author {
-  @apply text-gray-900 text-[0.9375rem] sm:text-sm font-semibold m-0 text-right;
+  @apply text-gray-900 text-[0.9375rem] sm:text-sm font-semibold m-0;
+  flex: 1 1 auto;
+  min-width: 0;
+  text-align: left;
+  margin-right: 0.75rem;
 }
 
 /* Stars */
 .testimonial-stars {
   @apply flex gap-1;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
 }
 
 .testimonial-star {
