@@ -1,31 +1,68 @@
+.banner-wrapper {
+  width: 100%;
+}
+
+/* Carousel Box */
 .banner-carousel {
   position: relative;
   width: 100%;
   overflow: hidden;
 }
 
+.banner-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
 .banner-slide {
   width: 100%;
+  flex-shrink: 0;
   border-radius: 18px;
 }
 
-.banner-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: transparent;
-  border: none;
+/* Bottom control bar */
+.banner-controls {
+  margin-top: 15px;               /* space below carousel */
+  display: flex;
+  justify-content: space-between; /* dots left | arrows right */
+  align-items: center;
+  padding: 0 10px;
+}
+
+/* Dots */
+.banner-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #d1d1d1;
+  border-radius: 50%;
   cursor: pointer;
+  transition: 0.3s;
 }
 
-.banner-arrow img {
-  width: 30px;
+.dot.active {
+  background: #3b82f6;
+  transform: scale(1.2);
 }
 
-.banner-arrow.left {
-  left: 10px;
+/* Bottom Arrows */
+.banner-bottom-arrows {
+  display: flex;
+  gap: 10px;
 }
 
-.banner-arrow.right {
-  right: 10px;
+.bottom-arrow {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
